@@ -154,7 +154,7 @@ class ImageMerge implements ImageMergeInterface
     private function calculateCenter()
     {
         $this->centerY = ($this->sourceImageHeight / 2) - ($this->postMergeImageHeight / 2);
-        $this->centerX = ($this->sourceImageWidth / 2) - ($this->postMergeImageHeight / 2);
+        $this->centerX = ($this->sourceImageWidth / 2) - ($this->postMergeImageWidth / 2);
     }
 
     /**
@@ -164,7 +164,7 @@ class ImageMerge implements ImageMergeInterface
      */
     private function calculateOverlap($percentage)
     {
-        $this->postMergeImageHeight = $this->sourceImageHeight * $percentage;
         $this->postMergeImageWidth = $this->sourceImageWidth * $percentage;
+        $this->postMergeImageHeight = $this->mergeImageHeight * $percentage;
     }
 }
